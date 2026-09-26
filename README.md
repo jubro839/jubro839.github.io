@@ -7,12 +7,12 @@ Static academic-style site (Minimal-Mistakes-like layout: sidebar profile + plai
     # open http://localhost:8766  — add ?theme=light or ?theme=dark to force a theme
 
 ## Deploy (GitHub Pages)
-1. `git init && git add -A && git commit -m "Portfolio site"` then push to a GitHub repo on `main`.
-2. Repo → Settings → Pages → "Deploy from a branch" → `main` / root.
-3. `CNAME` already contains `juyeonglee.ai`. At the DNS provider add:
-   - `A` records for `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
-   - `CNAME` for `www` → `<github-username>.github.io`
-4. Enable "Enforce HTTPS" once the certificate is issued.
+Live at https://jubro839.github.io/ from the `main` branch of `jubro839/jubro839.github.io` (user site, served from the repo root). Every push to `main` redeploys in about a minute.
+
+### Custom domain (juyeonglee.ai), when ready
+1. At the DNS provider add `A` records for `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 and a `CNAME` for `www` → `jubro839.github.io`.
+2. Rename `CNAME.pending` to `CNAME` and push (the file already contains `juyeonglee.ai`).
+3. In the repo → Settings → Pages, confirm the domain and tick "Enforce HTTPS" once the certificate is issued.
 
 ## Updating content
 - New CV → replace `assets/JuyeongLee_CV.pdf`.

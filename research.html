@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research - Juyeong Lee</title>
+  <meta name="description" content="Research and publications of Juyeong Lee — decision-focused portfolio optimisation, LLMs in finance, graph neural networks for traffic.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233d4144'/><text x='16' y='22' font-family='Arial' font-weight='700' font-size='15' fill='white' text-anchor='middle'>JL</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead"><div class="masthead-inner">
+    <a class="site-title" href="index.html">Juyeong Lee</a>
+    <nav><a href="index.html">About</a><a href="experience.html">Experience</a><a href="research.html" class="active">Research</a><a href="presentations.html">Presentations</a></nav>
+  </div></header>
+
+  <div class="page">
+    <aside class="sidebar"><div class="author">
+      <img src="assets/profile.jpg" alt="Juyeong Lee" width="112" height="112">
+      <h3>Juyeong Lee</h3>
+      <p class="bio">AI Consultant (Forward Deployed Engineer) at EY Consulting. Former AI / Quant Researcher at Qraft Technologies.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Seoul, South Korea</li>
+        <li><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><a href="assets/JuyeongLee_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:juyeong.lee0839@gmail.com">Email</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/juyeong-lee-16bb20241/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><a href="https://scholar.google.com/citations?user=UpxR71oAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+      </ul>
+    </div></aside>
+
+    <main>
+      <h1>Research</h1>
+
+      <h2>Research Interests</h2>
+      <ul class="plain">
+        <li><strong>Decision-focused learning for portfolio construction:</strong> learning estimator hyper-parameters (e.g. robust covariance thresholds) directly from realized portfolio risk while preserving the exact deployed estimator.</li>
+        <li><strong>Large language models and agents in finance:</strong> news-driven risk review, auditing "blind" trading benchmarks, information design for multi-agent investment teams, and text-derived alpha signals.</li>
+        <li><strong>Graph and time-series learning for spatio-temporal systems:</strong> graph neural networks and pattern matching for traffic-incident propagation; regime detection for market risk.</li>
+      </ul>
+
+      <h2>Working Papers (Under review)</h2>
+      <p class="footnote">Submitted to ICAIF 2026 — the 7th ACM International Conference on AI in Finance (Milan, Nov. 2026). One-page summaries are linked; full manuscripts are under double-blind review.</p>
+      <ul class="pub">
+        <li><span class="id">[W5]</span> <span class="me">Lee, J.</span> et al., DiffGerber: Decision-Focused Learning of the Gerber Threshold. <em>First author.</em> <a class="ref" href="docs/icaif/diffgerber.pdf" target="_blank" rel="noopener">[summary]</a>
+          <span class="note">Learns the Gerber covariance threshold from realized portfolio risk while every forward pass evaluates the exact hard statistic. On the top-100 US stocks, annual volatility falls from 14.04% to 13.76%, turnover from 0.87 to 0.76, and Sharpe rises from 0.44 to 0.54.</span></li>
+        <li><span class="id">[W4]</span> AURORA: Attention Universes for Risk Observation and Review Allocation. <em>Second author.</em> <a class="ref" href="docs/icaif/aurora.pdf" target="_blank" rel="noopener">[summary]</a>
+          <span class="note">Allocates a fixed daily review capacity between price-risk names and names selected by news, with source-linked LLM records. Over ~2M article–security–date records (2019–2025), replacing 20–25% of the list retains 93.5–93.8% of the tail-loss mass captured by a price-only queue.</span></li>
+        <li><span class="id">[W3]</span> CallRank: Isolating What Changed in Earnings-Call Q&amp;A for Sector Ranking and Cost-Adjusted Alpha. <em>Third author.</em> <a class="ref" href="docs/icaif/callrank.pdf" target="_blank" rel="noopener">[summary]</a>
+          <span class="note">Represents each firm-month by the signed displacement of its Q&amp;A embedding from the firm's own history. Monthly sector rank IC of .158; the Top-1 sector portfolio returns 42.1% annualized net of costs versus 24.0% for SPY.</span></li>
+        <li><span class="id">[W2]</span> AlphaLeak: What "Blind" LLM Trading Benchmarks Still See. <em>Third author.</em> <a class="ref" href="docs/icaif/alphaleak.pdf" target="_blank" rel="noopener">[summary]</a>
+          <span class="note">A utility–linkability audit of name-masked stock-ranking benchmarks: same-date news linkage recovers 99.8% of masked records and an LLM names the issuer on 71% of rows; theme/event abstraction cuts recovery to 3.9–5.1% without improving utility.</span></li>
+        <li><span class="id">[W1]</span> The Division of Research: Information Access and Independent-Book Capacity in LLM Investment Teams. <em>Third author.</em> <a class="ref" href="docs/icaif/division-of-research.pdf" target="_blank" rel="noopener">[summary]</a>
+          <span class="note">Introduces the Effective-Book Curve for LLM investment teams. Splitting 32 point-in-time fields across seats raises effective independent books at seven seats from 2.05 to 3.98, with 68% fewer prompt tokens and 52% lower model cost.</span></li>
+      </ul>
+
+      <h2>Journal Papers</h2>
+      <ul class="pub">
+        <li><span class="id">[J2]</span> <span class="me">Lee, J.</span>, Kwak, J., Oh, Y., &amp; Kim, S. (2022). Quantifying incident impacts and identifying influential features in urban traffic networks. <em>Transportmetrica B: Transport Dynamics</em>, 11(1), 279–300. https://doi.org/10.1080/21680566.2022.2063205 <a class="ref" href="https://doi.org/10.1080/21680566.2022.2063205" target="_blank" rel="noopener">[paper]</a> <a class="ref" href="docs/incident-impact-poster.pdf" target="_blank" rel="noopener">[poster]</a></li>
+        <li><span class="id">[J1]</span> <span class="me">Lee, J.</span>, &amp; Kim, W. (2021). Prediction of problematic smartphone use: A machine learning approach. <em>International Journal of Environmental Research and Public Health</em>, 18(12), 6458. https://doi.org/10.3390/ijerph18126458 <a class="ref" href="https://doi.org/10.3390/ijerph18126458" target="_blank" rel="noopener">[paper]</a> <a class="ref" href="docs/smartphone-use.pdf" target="_blank" rel="noopener">[pdf]</a></li>
+      </ul>
+
+      <h2>Conference Papers</h2>
+      <p class="footnote">MARBLE 2026 — International Conference on Mathematical Research for Blockchain Economy; proceedings in Springer <em>Lecture Notes in Operations Research</em>. Presented remotely, Sep. 2026.</p>
+      <ul class="pub">
+        <li><span class="id">[C4]</span> Seo, D., Cha, D., Son, S., <span class="me">Lee, J.</span>, Sung, M., &amp; Lee, M. (2026). Basis-Only Funding Is Not Dividend Fair: Settlement Design in Crypto Equity Perpetuals. <em>MARBLE 2026</em>.</li>
+        <li><span class="id">[C3]</span> Cha, D., Kim, H., Yeo, H., Sung, M., Lee, M., Son, S., Seo, D., &amp; <span class="me">Lee, J.</span> (2026). Pricing the Unprovable: Ambiguity, Turnstile Runs, and the Verifiability Discount in Crypto Protocols. <em>MARBLE 2026</em>.</li>
+        <li><span class="id">[C2]</span> Seo, D., Cha, D., Son, S., <span class="me">Lee, J.</span>, Lee, M., &amp; Sung, M. (2026). When Cross-Venue Agreement Is Not Price Discovery: Disclosure Frontiers for 24/7 Equity-Perpetual Oracles. <em>MARBLE 2026</em>.</li>
+        <li><span class="id">[C1]</span> Cha, D., Sung, M., Lee, M., Yeo, H., Kim, H., Son, S., Seo, D., &amp; <span class="me">Lee, J.</span> (2026). NEST: Stale-Robust Tokenized-Stock Measurement for a Crypto-Treasury LETF Stack. <em>MARBLE 2026</em>.</li>
+      </ul>
+
+      <h2>Conference Presentations</h2>
+      <ul class="pub">
+        <li><span class="id">[P2]</span> <span class="me">Lee, J.</span>, Oh, Y., Kwak, J., &amp; Kim, S. (2021). A propagation prediction method for non-recurrent traffic congestion. <em>INFORMS Annual Meeting</em>, Oct. 2021 (oral). <a class="ref" href="docs/propagation-prediction.pdf" target="_blank" rel="noopener">[preprint]</a> <a class="ref" href="https://drive.google.com/file/d/1pb86BXUoKX_lnevQpdqt7fWsWRHCVcF0/view" target="_blank" rel="noopener">[video]</a></li>
+        <li><span class="id">[P1]</span> <span class="me">Lee, J.</span>, Oh, Y., Kwak, J., &amp; Kim, S. (2020). Congestion propagation modelling with graph neural networks. <em>Korean Institute of Industrial Engineers (KIIE) Fall Conference</em>, Nov. 2020, pp. 2505–2528 (oral). <a class="ref" href="docs/gnn-traffic.pdf" target="_blank" rel="noopener">[slides]</a></li>
+      </ul>
+    </main>
+  </div>
+
+  <footer><div class="inner"><span>© 2026 Juyeong Lee</span><span><a href="mailto:juyeong.lee0839@gmail.com">juyeong.lee0839@gmail.com</a></span></div></footer>
+</body>
+</html>

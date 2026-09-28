@@ -30,8 +30,14 @@ h1, h2, h3, p, ul { margin: 0; }
 .page { max-width: 1220px; margin: 0 auto; padding: 40px 20px 64px; display: grid; grid-template-columns: 220px minmax(0, 840px); gap: 48px; align-items: start; }
 .sidebar { position: sticky; top: 32px; }
 .author img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; display: block; }
-.author .name { font-family: var(--display); font-weight: 600; font-size: 21px; color: var(--ink); margin: 14px 0 6px; }
-.author .bio { font-size: 14px; line-height: 1.5; color: var(--muted); }
+.author .name { font-family: var(--display); font-weight: 600; font-size: 21px; color: var(--ink); margin: 14px 0 8px; }
+.author .name + .roles { margin-top: 2px; }
+.author .roles { display: flex; flex-direction: column; gap: 9px; }
+.author .role { font-size: 14px; line-height: 1.45; }
+.author .role .t { font-weight: 600; color: var(--ink); }
+.author .role.prev .t { font-weight: 400; color: var(--text); }
+.author .role .s { color: var(--text); }
+.author .role .o { color: var(--muted); }
 .author ul { list-style: none; padding: 0; margin: 16px 0 0; }
 .author li { display: flex; align-items: center; gap: 9px; font-size: 14px; margin: 7px 0; color: var(--text); }
 .author li svg { width: 14px; height: 14px; stroke: var(--muted); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
@@ -97,7 +103,7 @@ footer a { color: var(--muted); text-decoration: none; }
   .sidebar { position: static; }
   .author { display: grid; grid-template-columns: 84px 1fr; column-gap: 16px; align-items: start; }
   .author img { width: 84px; height: 84px; grid-row: 1 / span 2; }
-  .author .name { margin: 0 0 4px; font-size: 20px; }
+  .author .name { margin: 0 0 6px; font-size: 20px; }
   .author ul { grid-column: 1 / -1; display: flex; flex-wrap: wrap; margin-top: 12px; }
   .author li { margin: 3px 14px 3px 0; gap: 7px; }
   .masthead-inner { height: auto; padding: 14px 20px 10px; flex-direction: column; align-items: flex-start; gap: 8px; }

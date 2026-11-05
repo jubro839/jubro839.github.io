@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#151618">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
   <script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();</script>
   <title>Presentations - Juyeong Lee</title>
   <meta name="description" content="Juyeong Lee, AI Consultant (Forward Deployed Engineer) at EY Consulting; former AI / Quant Researcher at QRAFT Technologies; MSc Industrial Engineering, UNIST.">
@@ -63,16 +62,19 @@
   (function () {
     var root = document.documentElement, btn = document.querySelector(".theme-toggle");
     if (!btn) return;
-    var mq = window.matchMedia("(prefers-color-scheme: dark)");
-    function current() { return root.getAttribute("data-theme") || (mq.matches ? "dark" : "light"); }
-    function label() { var t = current() === "dark" ? "Switch to light mode" : "Switch to dark mode"; btn.setAttribute("aria-label", t); btn.title = t; }
+    var meta = document.querySelector('meta[name="theme-color"]');
+    function current() { return root.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+    function label() {
+      var dark = current() === "dark", t = dark ? "Switch to light mode" : "Switch to dark mode";
+      btn.setAttribute("aria-label", t); btn.title = t;
+      if (meta) meta.setAttribute("content", dark ? "#151618" : "#ffffff");
+    }
     btn.addEventListener("click", function () {
       var next = current() === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
       label();
     });
-    if (mq.addEventListener) mq.addEventListener("change", label);
     label();
   })();
   </script>

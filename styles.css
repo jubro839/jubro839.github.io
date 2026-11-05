@@ -108,6 +108,15 @@ a.inline { color: var(--ink); font-weight: 600; }
 .work-head .who { min-width: 0; }
 .work-head .role { font-size: 13.5px; line-height: 1.5; color: var(--muted); }
 
+/* client, platform and data-vendor logo rows */
+.logos { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin: -2px 0 18px; }
+.box .logos { margin: 12px 0 0; }
+.box .logos + .list { margin-top: 12px; }
+.logo-group { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.logos-label { font-size: 12.5px; color: var(--muted); margin-right: 2px; }
+.chip { display: inline-flex; align-items: center; height: 30px; padding: 0 10px; border-radius: 6px; background: var(--tile); border: 1px solid var(--line); }
+.chip img { display: block; width: auto; }
+
 /* publications and decks */
 .pub { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
 .pub .id { color: var(--light); margin-right: 4px; }

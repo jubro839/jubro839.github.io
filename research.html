@@ -88,6 +88,28 @@
     });
     label();
   })();
+  // Email links: a mailto: link does nothing on a machine without a mail app, so a click also copies the address and says so.
+  (function () {
+    function fallback(text) {
+      try {
+        var ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select(); var ok = document.execCommand("copy"); document.body.removeChild(ta); return ok;
+      } catch (e) { return false; }
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="mailto:"]'), function (a) {
+      var addr = a.getAttribute("href").slice(7), text = a.textContent, timer;
+      a.title = addr + " (click to copy)";
+      function done(ok) {
+        if (!ok) return;
+        a.textContent = "Copied: " + addr;
+        clearTimeout(timer); timer = setTimeout(function () { a.textContent = text; }, 2200);
+      }
+      a.addEventListener("click", function () {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(addr).then(function () { done(true); }, function () { done(fallback(addr)); });
+        else done(fallback(addr));
+      });
+    });
+  })();
   </script>
 </body>
 </html>
